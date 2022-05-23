@@ -20,6 +20,16 @@ let songs = [
     {songName: "NCS hellcat", filePath: "songs/8.mp3", coverPath: "covers/8.jpg"},
     {songName: "NCS- To Myself", filePath: "songs/9.mp3", coverPath: "covers/9.jpg"},
     {songName: "NCS Safe And Sound", filePath: "songs/10.mp3", coverPath: "covers/10.jpg"},
+    {songName: "martin_garrix_animals", filePath: "songs/11.mp3", coverPath: "covers/11.jpg"},
+    {songName: "martin_garrix_khalid_ocean", filePath: "songs/12.mp3", coverPath: "covers/12.jpg"},
+    {songName: "Martin Garrix - Oops", filePath: "songs/13.mp3", coverPath: "covers/13.jpg"},
+    {songName: "martin garrix - wiee", filePath: "songs/14.mp3", coverPath: "covers/14.jpg"},
+    {songName: "Martin Garrix Byte", filePath: "songs/15.mp3", coverPath: "covers/15.jpg"},
+    {songName: "martin garrixmartin garrix pizza", filePath: "songs/16.mp3", coverPath: "covers/16.jpg"},
+    {songName: "martin garrix poison", filePath: "songs/17.mp3", coverPath: "covers/17.jpg"},
+    {songName: "martin garrix troye", filePath: "songs/18.mp3", coverPath: "covers/18.jpg"},
+    {songName: "Ocean - Martin Garrix", filePath: "songs/19.mp3", coverPath: "covers/19.jpg"},
+    {songName: "There For You - Martin Garrix", filePath: "songs/20.mp3", coverPath: "covers/20.jpg"},
 ]
 
 songItems.forEach((element, i)=>{ 
@@ -81,8 +91,6 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         }
         else {
             makeAllPlays();
-            // e.target.classList.remove('fa-pause-circle');
-            // e.target.classList.add('fa-play-circle');
             audioElement.pause();
             gif.style.opacity = 0;
             masterPlay.classList.remove('fa-pause-circle');
@@ -128,22 +136,77 @@ myvolumebar.addEventListener('change',()=>{
 audioElement.volume = myvolumebar.value/100;
 })
 
+// hiding transitions
+let hidesong =document.getElementById('hidesong');
+let songbox  =document.getElementById('ncssongs');
+hidesong.addEventListener('click', ()=>{
+if(hidesong.classList.contains('fa-chevron-circle-down')){
+    hidesong.classList.remove('fa-chevron-circle-down');
+    hidesong.classList.add('fa-chevron-circle-left');
+    songbox.classList.remove('show');
+    songbox.classList.add('hide');
+
+    document.getElementsByClassName('pagehead')[0].style.flexDirection ="row-reverse"
+    document.getElementsByClassName('pagehead')[0].style.alignItems ="normal"
+    document.getElementsByClassName('pagehead')[0].style.height ="45px"
+
+    document.getElementById('headingh1').style.fontSize ="1.9em"
+document.getElementById('ncs').style.height= "50px"
+
+}
+else{
+    hidesong.classList.remove('fa-chevron-circle-left');
+    hidesong.classList.add('fa-chevron-circle-down');
+    songbox.classList.remove('hide');
+    songbox.classList.add('show');
+
+    document.getElementsByClassName('pagehead')[0].style.flexDirection ="column"
+    document.getElementsByClassName('pagehead')[0].style.alignItems ="center"
+    document.getElementsByClassName('pagehead')[0].style.height ="170px"
+
+    document.getElementById('headingh1').style.fontSize ="2em"
+    document.getElementById('ncs').style.height= "141px"
+}
+})
 
 
-let container =document.getElementsByClassName('container');
-// container.addEventListener('scroll', ()=>{
-// })
-// var scrr =0;
-// var temp =0;
-// function myscroll() {
-//     scrr = container.pageYOffset;
-//     if(scrr>temp){
-//         temp =scrr;
-//         document.getElementById('ncs')[0].style.opacity="0.4";
-//     }
-//     else{
-//         document.getElementById('ncs')[0].style.opacity="0";
 
-//     }
+document.getElementsByClassName('pagehead2')[0].style.flexDirection ="row-reverse"
+document.getElementsByClassName('pagehead2')[0].style.alignItems ="normal"
+document.getElementsByClassName('pagehead2')[0].style.height ="45px"
 
-// }
+document.getElementById('headingh2').style.fontSize ="1.9em"
+document.getElementById('martin').style.height= "50px"
+
+
+let hidesong2 =document.getElementById('hidesong2');
+let songbox2  =document.getElementById('martinsongs');
+hidesong2.addEventListener('click', ()=>{
+if(hidesong2.classList.contains('fa-chevron-circle-left')){
+    hidesong2.classList.remove('fa-chevron-circle-left');
+    hidesong2.classList.add('fa-chevron-circle-down');
+    songbox2.classList.remove('hide');
+    songbox2.classList.add('show');
+
+    document.getElementsByClassName('pagehead2')[0].style.flexDirection ="column"
+    document.getElementsByClassName('pagehead2')[0].style.alignItems ="center"
+    document.getElementsByClassName('pagehead2')[0].style.height ="170px"
+
+    document.getElementById('headingh2').style.fontSize ="2em"
+    document.getElementById('martin').style.height= "141px"
+
+}
+else{
+    hidesong2.classList.remove('fa-chevron-circle-down');
+    hidesong2.classList.add('fa-chevron-circle-left');
+    songbox2.classList.remove('show');
+    songbox2.classList.add('hide');
+
+    document.getElementsByClassName('pagehead2')[0].style.flexDirection ="row-reverse"
+    document.getElementsByClassName('pagehead2')[0].style.alignItems ="normal"
+    document.getElementsByClassName('pagehead2')[0].style.height ="45px"
+
+    document.getElementById('headingh2').style.fontSize ="1.9em"
+document.getElementById('martin').style.height= "50px"
+}
+})
